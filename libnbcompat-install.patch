@@ -1,0 +1,48 @@
+--- libnbcompat-2005Q1/Makefile.in.orig	2005-02-20 06:55:51.000000000 +0100
++++ libnbcompat-2005Q1/Makefile.in	2005-05-25 23:18:56.000000000 +0200
+@@ -82,14 +82,14 @@
+ 	$(LINK) bits.o
+ 
+ install:
+-	$(INSTALL) -m 755 -d $(prefix)/lib
+-	$(INSTALL) -m 555 ${LIB} $(prefix)/lib
+-	$(RANLIB) $(prefix)/lib/$(LIB)
+-	$(INSTALL) -m 755 -d $(prefix)/include
+-	$(INSTALL) -m 755 -d $(prefix)/include/nbcompat
++	$(INSTALL) -d $(DESTDIR)/$(prefix)/lib
++	$(INSTALL)  ${LIB} $(DESTDIR)/$(prefix)/lib
++	$(RANLIB) $(DESTDIR)/$(prefix)/lib/$(LIB)
++	$(INSTALL) -d $(DESTDIR)/$(prefix)/include
++	$(INSTALL) -d $(DESTDIR)/$(prefix)/include/nbcompat
+ 	@for file in $(INCS); do \
+-		echo "$(INSTALL) -m 444 $$file $(prefix)/include/$$file"; \
+-		$(INSTALL) -m 444 $$file $(prefix)/include/$$file; \
++		echo "$(INSTALL) $$file  $(DESTDIR)/$(prefix)/include/$$file"; \
++		$(INSTALL) $$file  $(DESTDIR)/$(prefix)/include/$$file; \
+ 	done
+ 
+ clean:
+--- libnbcompat-2005Q1/Makefile.in.orig	2005-05-25 23:26:41.000000000 +0200
++++ libnbcompat-2005Q1/Makefile.in	2005-05-25 23:31:01.000000000 +0200
+@@ -82,8 +82,8 @@
+ 	$(LINK) bits.o
+ 
+ install:
+-	$(INSTALL) -d $(DESTDIR)/$(prefix)/lib
+-	$(INSTALL)  ${LIB} $(DESTDIR)/$(prefix)/lib
++	$(INSTALL) -d $(DESTDIR)/$(LIBDIR)
++	$(INSTALL)  ${LIB} $(DESTDIR)/$(LIBDIR)
+ 	$(RANLIB) $(DESTDIR)/$(prefix)/lib/$(LIB)
+ 	$(INSTALL) -d $(DESTDIR)/$(prefix)/include
+ 	$(INSTALL) -d $(DESTDIR)/$(prefix)/include/nbcompat
+--- libnbcompat-2005Q1/Makefile.in.orig	2005-05-25 23:35:34.000000000 +0200
++++ libnbcompat-2005Q1/Makefile.in	2005-05-25 23:36:36.000000000 +0200
+@@ -84,7 +84,7 @@
+ install:
+ 	$(INSTALL) -d $(DESTDIR)/$(LIBDIR)
+ 	$(INSTALL)  ${LIB} $(DESTDIR)/$(LIBDIR)
+-	$(RANLIB) $(DESTDIR)/$(prefix)/lib/$(LIB)
++	$(RANLIB) $(DESTDIR)/$(LIBDIR)/$(LIB)
+ 	$(INSTALL) -d $(DESTDIR)/$(prefix)/include
+ 	$(INSTALL) -d $(DESTDIR)/$(prefix)/include/nbcompat
+ 	@for file in $(INCS); do \
