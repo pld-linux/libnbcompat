@@ -1,4 +1,5 @@
-Summary:	NetBSD compat library 
+Summary:	NetBSD compat library
+Summary(pl):	Biblioteka kompatybilno¶ci z NetBSD
 Name:		libnbcompat
 Version:	2005Q1
 Release:	0.1
@@ -9,13 +10,17 @@ Source0:	%{name}-%{version}.tar.bz2
 Patch0:		%{name}-install.patch
 URL:		http://www.netbsd.org/
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-NetBSD compatibility library
+NetBSD compatibility library.
+
+%description -l pl
+Biblioteka kompatybilno¶ci z NetBSD.
 
 %prep
-%setup -q -c -n %{name}-%{version}
+%setup -q -c
 %patch0 -p1
 
 %build
@@ -37,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.a
+%{_libdir}/lib*.a
 %{_includedir}/nbcompat.h
 %dir %{_includedir}/nbcompat
 %{_includedir}/nbcompat/*
