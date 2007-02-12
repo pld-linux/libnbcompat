@@ -1,5 +1,5 @@
 Summary:	NetBSD compat library
-Summary(pl):	Biblioteka kompatybilno∂ci z NetBSD
+Summary(pl.UTF-8):   Biblioteka kompatybilno≈õci z NetBSD
 Name:		libnbcompat
 Version:	2005Q1
 Release:	0.1
@@ -16,8 +16,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 NetBSD compatibility library.
 
-%description -l pl
-Biblioteka kompatybilno∂ci z NetBSD.
+%description -l pl.UTF-8
+Biblioteka kompatybilno≈õci z NetBSD.
 
 %prep
 %setup -q -c
