@@ -1,5 +1,5 @@
 Summary:	NetBSD compat library
-Summary(pl.UTF-8):   Biblioteka kompatybilności z NetBSD
+Summary(pl.UTF-8):	Biblioteka kompatybilności z NetBSD
 Name:		libnbcompat
 Version:	2005Q1
 Release:	0.1
